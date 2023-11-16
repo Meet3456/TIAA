@@ -46,10 +46,10 @@ const Land = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 m-2 bg-primary-100">
                     <NavLink to='/planning'><CustomCard heading="Retirement Planning 🚀" text="Plan your retirement." image={planning} /></NavLink>
                     <NavLink to='/community'><CustomCard heading="Social Engagement Community 🌐" text="Build a community together" image={community} /></NavLink>
-                    <CustomCard heading="Robo Advisor 🤖" text="Get Ai Advice" image={advisor} />
-                    <CustomCard heading="HealthCare 🩺" text="know Insurance cost." image={healthcare} />
-                    <CustomCard heading="Finance Bot ✅" text="Stock bot" image={finance} />
-                    <CustomCard heading="NearMe Explorer 📍" text="Map explorer" image={explorer} />
+                    <NavLink to="http://localhost:8501"><CustomCard heading="Robo Advisor 🤖" text="Get Ai Advice" image={advisor} /></NavLink>
+                    <NavLink to="http://localhost:8502"><CustomCard heading="HealthCare 🩺" text="know Insurance cost." image={healthcare} /></NavLink>
+                    <NavLink to="http://localhost:8503"><CustomCard heading="Finance Bot ✅" text="Stock bot" image={finance} /></NavLink>
+                    <NavLink to="http://localhost:8504"><CustomCard heading="NearMe Explorer 📍" text="Map explorer" image={explorer} /></NavLink>
                 </div>
             </div>
 
