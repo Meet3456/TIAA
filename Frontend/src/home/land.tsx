@@ -8,6 +8,7 @@ import healthcare from '../assets/healthcare.jpg'
 import community from '../assets/community.jpg'
 import finance from '../assets/finance.jpg'
 import explorer from '../assets/explorer.jpg'
+import Footer from "../scenes/Footer";
 const Land = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
     const flexBetween = "flex items-center justify-between";
@@ -52,8 +53,10 @@ const Land = () => {
                     <NavLink to="http://localhost:8504"><CustomCard heading="NearMe Explorer 📍" text="Map explorer" image={explorer} /></NavLink>
                 </div>
             </div>
+            <Footer/>
 
         </div>
+        
     );
 }
 
