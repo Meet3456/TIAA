@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@600&display=swap');
+
+.card {
+    font-family: sans-serif;
+    background-color: #0c4a6e;
+    color: white;
+    padding: 2rem 2rem;
+}
+
+.new {
+    font-family: 'Edu TAS Beginner', cursive;
+}
+
+.head {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .7s ease-in-out, box-shadow .7s ease-in-out;
+}
+
+.head:hover {
+    box-shadow: inset 1000px 0 0 0 #54b3d6;
+    color: white;
+}
+
+.card p {
+    padding-top: 1rem;
+    line-height: 150%;
+}
+
+.expand {
+    width: 30rem;
+}
