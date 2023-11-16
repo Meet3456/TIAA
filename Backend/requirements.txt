@@ -1,0 +1,17 @@
+openai
+pandas
+streamlit
+numpy
+matplotlib
+yfinance
+python-dotenv
+tiktoken
+langchain
+faiss-cpu
+protobuf
+pypdf
+streamlit-lottie
+requests
+huggingface_hub
+torch
+scikit-learn
