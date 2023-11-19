@@ -30,23 +30,24 @@ openai.api_key = api_key
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.5,
                  openai_api_key=api_key)
 
-vectordb_file_path = "faiss_index"
+vectordb_file_path = "faiss_index_new"
 # Dedfining  the embedding model:
-# model_name = "BAAI/bge-base-en"
-# encode_kwargs = {'normalize_embeddings': True} # set True to compute cosine similarity
+model_name = "BAAI/bge-base-en"
+encode_kwargs = {'normalize_embeddings': True} # set True to compute cosine similarity
 
-# model_norm = HuggingFaceBgeEmbeddings(
-#     model_name=model_name,
-#     model_kwargs={'device': 'cpu'},
-#     encode_kwargs=encode_kwargs
-# )
+model_norm = HuggingFaceBgeEmbeddings(
+    model_name=model_name,
+    model_kwargs={'device': 'cpu'},
+    encode_kwargs=encode_kwargs
+)
 
-# ## Using the new embedding model:
-# embeddings = model_norm
+## Using the new embedding model:
+embeddings = model_norm
 
-embeddings = OpenAIEmbeddings()
+# embeddings = OpenAIEmbeddings()
 
 # def create_vector_db():
+#         print("Ebtered the function")
 #         loader = DirectoryLoader('data/', glob="*.pdf", loader_cls=PyPDFLoader)
 #         data = loader.load()
 
@@ -56,15 +57,16 @@ embeddings = OpenAIEmbeddings()
 #         # Create a FAISS instance for vector database from 'data'
 #         vectordb = FAISS.from_documents(documents=text_chunks,
 #                                         embedding=embeddings)
-
+#         print("saved into local store")
 #         # Save vector database locally
 #         vectordb.save_local(vectordb_file_path)
 
-
+# if __name__ == "__main__":
+#     create_vector_db()
 vectordb = FAISS.load_local(vectordb_file_path, embeddings)
 # Create a retriever for querying the vector database
 retriever = vectordb.as_retriever(score_threshold=0.7)
-prompt_template = """As a Helpful agent specializing in retirement planning, utilize the provided context to generate detailed responses. Give response about the startup ideas based on users past/present Field of work if Provided (the best 5) in Structured format. Strive to maximize the inclusion of text from the "response" section of the source document, minimizing alterations.Structure the response in good manner , like showing the response in points/bullet-points.
+prompt_template = """As a Helpful agent specializing in retirement planning, utilize the provided context to generate detailed responses. Give response about the startup/business ideas based on users past/present Field of work if Provided in Structured format.Provide the most useful and related Information regarding Healthcare and wellness related queries in Structured format. Strive to maximize the inclusion of text from the "response" section of the source document, minimizing alterations.Structure the response in good manner , like showing the response in points/bullet-points for all queries.
 CONTEXT: {context}
 QUESTION: {question}"""
 PROMPT = PromptTemplate(
