@@ -48,13 +48,14 @@ Replace `your_openai_key` and `your_opencage_key` with your actual API keys.
 
 ## Usage
 
-video:
-https://github.com/Meet3456/TIAA/assets/105905490/6f995871-aa99-465a-81d3-a6efa22706a7
-
 check out this video demonstration:
 https://drive.google.com/drive/folders/1hrUWndBsPBDGrxr9bv6drd4m-u7waUiP
 
 
 
 
+
+
+
+https://github.com/Meet3456/TIAA/assets/105905490/f89e0113-7d1e-4877-a5f9-36306db9de91
 
