@@ -41,7 +41,7 @@ def get_nearby_places(location, category):
             'q': f'{category} in {location}',
             'key': api_key,
             'language': 'en',  # Language for results
-            'limit': 15,  # Adjust the limit based on the number of places you want
+            'limit': 50,  # Adjust the limit based on the number of places you want
             'radius': 10000,
         }
         places_response = requests.get(places_url, params=places_params)
@@ -59,7 +59,7 @@ def main():
         location = st.text_input(':blue[Enter your location:]')
         selected_category = st.selectbox(':blue[Select nearby places category:]', 
                                           ['Yoga/Meditation centers', 'Gymkhanas', 'Parks/Sports Grounds','Gardens',
-                                           'Medicals', 'Hospitals', 'Dentists', 'Eye care centers', 'Doctors'])
+                                           'Medicals', 'Hospitals','Clinics'])
 
         st.header(f"Nearby {selected_category}")
 
@@ -80,9 +80,7 @@ def main():
                     'Gardens':'garden',
                     'Medicals': 'medical',
                     'Hospitals': 'hospital',
-                    'Dentists': 'dentist',
-                    'Eye care centers': 'Eyecare centers',
-                    'Doctors': 'doctor',
+                    'Clinics': 'Clinic'
                 }
                 selected_category_lower = category_mapping[selected_category]
                 nearby_places = get_nearby_places(location, selected_category_lower)
